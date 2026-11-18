@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us · KilimoFresh</title>
+  <meta name="description" content="How the KilimoFresh cooperative network works: who grows the produce, how it is graded and how the farm-gate price is set.">
+  <meta name="theme-color" content="#1d5a38">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="module" src="js/pages/static.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header" id="site-header"></header>
+
+  <main id="main" tabindex="-1">
+    <div class="container page-head">
+      <p class="eyebrow">About us</p>
+      <h1>A cooperative network, not a middleman</h1>
+      <p class="lead">KilimoFresh is the shared sourcing desk of smallholder cooperatives in Machakos County. It exists so that farmers know their buyer before they harvest, and buyers know their supply before they plan a menu.</p>
+    </div>
+
+    <section class="section">
+      <div class="container split">
+        <div class="prose">
+          <h2>The problem we are solving</h2>
+          <p>Around Machakos, Athi River, Kangundo, Matuu and Mwala, peri-urban farmers often harvest without a confirmed buyer. Prices swing from week to week, produce that is not sold within days spoils, and brokers set the farm-gate price.</p>
+          <p>Institutional buyers have the opposite problem. A school bursar or hotel storekeeper cannot easily see what is available nearby, in what grade, at what price, or when.</p>
+          <p>KilimoFresh puts both sides on one page: a catalog of what is being harvested, a clear price, and a direct way to request it.</p>
+          <h2>How the network runs</h2>
+          <ul>
+            <li>Each cooperative reports its expected harvest to the desk every week.</li>
+            <li>A field officer grades the produce at the collection point.</li>
+            <li>The admin publishes the listing with a short code such as <span class="mono">TOM-G1-ATH</span> (Grade 1 tomatoes, Athi River).</li>
+            <li>Buyers send a requisition; the desk confirms supply by phone and arranges delivery.</li>
+          </ul>
+        </div>
+        <aside class="card card--pad">
+          <h2>Fair pricing</h2>
+          <p>The price on each card is the price the buyer pays per unit. The cooperative keeps a fixed service share to cover grading, crates and the desk; the rest is the farmer’s farm-gate price.</p>
+          <p>Delivery is charged separately, per zone, and shown before you order.</p>
+          <a class="btn btn--primary" href="catalog.html">See current prices</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section--tint" aria-labelledby="grading-title">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow">Grading</p>
+          <h2 id="grading-title">What the grades mean</h2>
+          <p>Every listing carries a grade so you know what will arrive.</p>
+        </div>
+        <div class="table-wrap card">
+          <table class="table grade-table">
+            <caption class="sr-only">Produce grades</caption>
+            <thead><tr><th scope="col">Grade</th><th scope="col">What it means</th><th scope="col">Best for</th></tr></thead>
+            <tbody>
+              <tr><th scope="row" data-label="Grade"><span class="badge badge--grade1">Grade 1</span></th><td data-label="What it means">Uniform size, firm, clean, no visible damage or disease.</td><td data-label="Best for">Hotels, hospitals, retail display.</td></tr>
+              <tr><th scope="row" data-label="Grade"><span class="badge badge--grade2">Grade 2</span></th><td data-label="What it means">Mixed sizes with minor surface marks; sound and fresh.</td><td data-label="Best for">School and staff kitchens, caterers.</td></tr>
+              <tr><th scope="row" data-label="Grade"><span class="badge badge--grade3">Grade 3</span></th><td data-label="What it means">Irregular shape or ripeness; fit for cooking the same week.</td><td data-label="Best for">Processing, sauces, juices.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid grid--3">
+        <article class="card card--pad"><h3>Your data</h3><p>We ask only for the contact details needed to confirm an order, and only with your consent, in line with Kenya’s Data Protection Act, 2019.</p></article>
+        <article class="card card--pad"><h3>Signed receipts</h3><p>Every requisition receipt is digitally signed, so anyone can check that it is genuine and unchanged.</p><a href="trust.html">How we secure the site</a></article>
+        <article class="card card--pad"><h3>Talk to us</h3><p>Questions about supply, delivery or joining as a grower are answered within one working day.</p><a href="contact.html">Contact the desk</a></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+  <noscript><p class="container">KilimoFresh needs JavaScript to show the catalog and send orders. Call or WhatsApp +254 700 000 000 to order.</p></noscript>
+</body>
+</html>

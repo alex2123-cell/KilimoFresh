@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trust & Security · KilimoFresh</title>
+  <meta name="description" content="How KilimoFresh uses a public key infrastructure: HTTPS certificates, digitally signed receipts you can verify in your browser, and how the web application is built.">
+  <meta name="theme-color" content="#1d5a38">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="module" src="js/pages/trust.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header" id="site-header"></header>
+
+  <main id="main" tabindex="-1">
+    <div class="container page-head">
+      <p class="eyebrow">Trust &amp; security</p>
+      <h1>Check it yourself</h1>
+      <p class="lead">KilimoFresh runs its own public key infrastructure. It encrypts the connection, signs every receipt, and protects the admin area. This page shows the certificates and lets you verify any receipt.</p>
+      <div id="connection"></div>
+    </div>
+
+    <section class="section" aria-labelledby="verify-title">
+      <div class="container split">
+        <div>
+          <h2 id="verify-title">Verify a receipt</h2>
+          <p>Enter a requisition reference number. Your browser fetches the receipt and checks its digital signature against our public key. Nothing is taken on trust from the server.</p>
+          <form class="inline-form" id="verify-form">
+            <div class="field">
+              <label for="ref">Reference number</label>
+              <input type="text" id="ref" name="ref" placeholder="KF-20261116-ABCDE" autocomplete="off" required>
+            </div>
+            <button class="btn btn--primary" type="submit">Verify</button>
+          </form>
+          <div id="verify-output" aria-live="polite"></div>
+        </div>
+
+        <div class="card card--pad" id="tamper" hidden>
+          <h2>Try to forge it</h2>
+          <p>This is the exact text that was signed. Change any character, for example the total, and the signature stops matching.</p>
+          <div class="field">
+            <label for="tamper-text">Signed receipt text</label>
+            <textarea id="tamper-text" class="mono" rows="9" spellcheck="false"></textarea>
+          </div>
+          <div id="tamper-result" aria-live="polite"></div>
+          <button class="btn btn--ghost btn--small" type="button" id="tamper-reset">Restore original</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint" aria-labelledby="chain-title">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow">Public key infrastructure</p>
+          <h2 id="chain-title">Our certificate chain</h2>
+          <p>A certificate ties a public key to a name. The Root CA signs the other two certificates, so trusting the Root CA is enough to trust them.</p>
+        </div>
+        <div id="chain-status"></div>
+        <ol class="chain" id="chain"><li class="loading">Loading certificates…</li></ol>
+        <p class="form-actions"><a class="btn btn--ghost" href="/api/pki/ca.crt" download>Download the Root CA certificate</a></p>
+        <h3>Receipt signing public key</h3>
+        <p>Anyone can use this key to check a signature. Only the matching private key, which never leaves the server, can create one.</p>
+        <pre class="keybox" id="public-key" tabindex="0" aria-label="Signing public key in PEM format"></pre>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="pki-uses-title">
+      <div class="container">
+        <div class="section__head">
+          <h2 id="pki-uses-title">Where the keys are used</h2>
+        </div>
+        <div class="grid grid--3">
+          <article class="card card--pad"><h3>Encrypted connection</h3><p>The server certificate enables HTTPS (TLS), so phone numbers and orders cannot be read or changed in transit.</p></article>
+          <article class="card card--pad"><h3>Signed receipts</h3><p>Each receipt is signed with RSA and SHA-256. A valid signature proves who issued it and that not one character has changed.</p></article>
+          <article class="card card--pad"><h3>Signed admin sessions</h3><p>After sign-in the admin holds a token signed with the same private key. A forged or edited token is rejected.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint" aria-labelledby="arch-title">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow">Under the hood</p>
+          <h2 id="arch-title">Core components of this web application</h2>
+        </div>
+        <div class="arch">
+          <div class="arch__tier"><h3>1. Client · presentation tier</h3><p>Your browser. Semantic HTML5 pages, one CSS style sheet, and JavaScript ES modules that build the interface through the Document Object Model (<code>createElement</code>, event listeners, <code>&lt;dialog&gt;</code>, <code>localStorage</code>, Web Crypto).</p></div>
+          <p class="arch__flow">HTTPS REQUEST ↓ ↑ JSON RESPONSE</p>
+          <div class="arch__tier"><h3>2. Web server</h3><p>Node.js with Express. Serves the static pages, terminates TLS with the server certificate, and adds security headers and rate limits.</p></div>
+          <p class="arch__flow">ROUTES ↓ ↑ RESULTS</p>
+          <div class="arch__tier"><h3>3. Application logic · REST API</h3><p>Routes under <code>/api</code> validate input, estimate costs, issue reference numbers, sign receipts and check admin sessions.</p></div>
+          <p class="arch__flow">READ ↓ ↑ WRITE</p>
+          <div class="arch__tier"><h3>4. Data store</h3><p>JSON collections: produce catalog (D1), requisitions (D2), delivery zones (D3), grower applications, messages and admin users.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+  <noscript><p class="container">KilimoFresh needs JavaScript to show the catalog and send orders. Call or WhatsApp +254 700 000 000 to order.</p></noscript>
+</body>
+</html>

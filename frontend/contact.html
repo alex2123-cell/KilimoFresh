@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact · KilimoFresh</title>
+  <meta name="description" content="Contact the KilimoFresh cooperative desk in Machakos Town by form, phone, email or WhatsApp.">
+  <meta name="theme-color" content="#1d5a38">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="module" src="js/pages/forms.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header" id="site-header"></header>
+
+  <main id="main" tabindex="-1">
+    <div class="container page-head">
+      <p class="eyebrow">Contact</p>
+      <h1>Talk to the cooperative desk</h1>
+      <p class="lead">Ask about supply, delivery, standing orders or joining as a grower. We reply within one working day.</p>
+    </div>
+
+    <div class="container section">
+      <section class="card result" id="result" tabindex="-1" hidden aria-live="polite"></section>
+      <div class="split">
+        <form class="card card--pad" id="contact-form" novalidate aria-labelledby="contact-title">
+          <h2 id="contact-title">Send a message</h2>
+          <div class="form-grid">
+          <div class="field">
+            <label for="name">Full name</label>
+            <input type="text" id="name" name="name" autocomplete="name" maxlength="80" required>
+            <p class="field__error" data-error-for="name"></p>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+            <p class="field__error" data-error-for="email"></p>
+          </div>
+          <div class="field">
+            <label for="phone">Mobile number <span class="optional">(optional)</span></label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel">
+            <p class="field__error" data-error-for="phone"></p>
+          </div>
+          <div class="field">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" maxlength="100" required>
+            <p class="field__error" data-error-for="subject"></p>
+          </div>
+          <div class="field field--wide">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" maxlength="1500" aria-describedby="message-hint" required></textarea>
+            <p class="field__hint" id="message-hint"><span id="message-count">0 / 1500</span></p>
+            <p class="field__error" data-error-for="message"></p>
+          </div>
+          <div class="field field--wide">
+            <label class="check" for="consent">
+              <input type="checkbox" id="consent" name="consent">
+              <span>I agree that KilimoFresh may store these contact details to handle this request, as set out in Kenya’s Data Protection Act, 2019. They are not shared or used for marketing.</span>
+            </label>
+            <p class="field__error" data-error-for="consent"></p>
+          </div>
+          </div>
+          <div data-form-alert></div>
+          <div class="form-actions"><button class="btn btn--primary" type="submit">Send message</button></div>
+        </form>
+
+        <aside class="grid">
+          <div class="card card--pad">
+            <h2>Reach us directly</h2>
+            <p><strong>Phone</strong><br><a data-config="phoneDisplay" href="tel:"></a></p>
+            <p><strong>Email</strong><br><a data-config="email" href="mailto:"></a></p>
+            <p><strong>Office</strong><br><span data-config="address"></span></p>
+            <a class="btn btn--whatsapp" id="whatsapp-chat" target="_blank" rel="noopener noreferrer" href="#">Chat on WhatsApp</a>
+          </div>
+          <div class="card card--pad">
+            <h2>Desk hours</h2>
+            <p>Monday to Friday, 7:30 am – 5:00 pm<br>Saturday, 8:00 am – 1:00 pm<br>Closed on Sundays and public holidays</p>
+            <p class="muted">Requisitions sent after hours are confirmed the next working morning.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+  <noscript><p class="container">KilimoFresh needs JavaScript to show the catalog and send orders. Call or WhatsApp +254 700 000 000 to order.</p></noscript>
+</body>
+</html>

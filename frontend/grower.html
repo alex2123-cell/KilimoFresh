@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Partner as Grower · KilimoFresh</title>
+  <meta name="description" content="Farmers in Machakos County can apply to list their harvest through the KilimoFresh cooperative network and read practical farming advisories.">
+  <meta name="theme-color" content="#1d5a38">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="module" src="js/pages/forms.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header" id="site-header"></header>
+
+  <main id="main" tabindex="-1">
+    <div class="container page-head">
+      <p class="eyebrow">Partner as grower</p>
+      <h1>Know your buyer before you harvest</h1>
+      <p class="lead">Join the network through your cooperative, or as an individual farmer, and have your harvest listed for institutional buyers.</p>
+    </div>
+
+    <div class="container section">
+      <section class="card result" id="result" tabindex="-1" hidden aria-live="polite"></section>
+      <div class="split">
+        <form class="card card--pad" id="grower-form" novalidate aria-labelledby="grower-title">
+          <h2 id="grower-title">Grower application</h2>
+          <div class="form-grid">
+          <div class="field">
+            <label for="contactName">Full name</label>
+            <input type="text" id="contactName" name="contactName" autocomplete="name" maxlength="80" required>
+            <p class="field__error" data-error-for="contactName"></p>
+          </div>
+          <div class="field">
+            <label for="phone">Mobile number</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" required>
+            <p class="field__hint" id="phone-hint">For example 0712 345 678</p>
+            <p class="field__error" data-error-for="phone"></p>
+          </div>
+          <div class="field">
+            <label for="email">Email <span class="optional">(optional)</span></label>
+            <input type="email" id="email" name="email" autocomplete="email">
+            <p class="field__error" data-error-for="email"></p>
+          </div>
+          <div class="field">
+            <label for="location">Farm location (ward or town)</label>
+            <input type="text" id="location" name="location" maxlength="60" required>
+            <p class="field__error" data-error-for="location"></p>
+          </div>
+          <div class="field">
+            <label for="farmSize">Farm size in acres</label>
+            <input type="number" id="farmSize" name="farmSize" min="0.1" max="500" step="0.1" inputmode="decimal" required>
+            <p class="field__error" data-error-for="farmSize"></p>
+          </div>
+          <div class="field">
+            <label for="cooperative">Cooperative or group <span class="optional">(optional)</span></label>
+            <input type="text" id="cooperative" name="cooperative" maxlength="80">
+            <p class="field__error" data-error-for="cooperative"></p>
+          </div>
+          <fieldset class="field field--wide">
+            <legend>Crops you grow</legend>
+            <div class="chips">
+              <label><input type="checkbox" name="crops" value="Tomatoes" data-group="crops"> Tomatoes</label>
+              <label><input type="checkbox" name="crops" value="Kale" data-group="crops"> Kale</label>
+              <label><input type="checkbox" name="crops" value="Cabbage" data-group="crops"> Cabbage</label>
+              <label><input type="checkbox" name="crops" value="Onions" data-group="crops"> Onions</label>
+              <label><input type="checkbox" name="crops" value="Mangoes" data-group="crops"> Mangoes</label>
+              <label><input type="checkbox" name="crops" value="Avocados" data-group="crops"> Avocados</label>
+              <label><input type="checkbox" name="crops" value="Maize" data-group="crops"> Maize</label>
+              <label><input type="checkbox" name="crops" value="Beans" data-group="crops"> Beans</label>
+              <label><input type="checkbox" name="crops" value="Green grams" data-group="crops"> Green grams</label>
+              <label><input type="checkbox" name="crops" value="Sweet potatoes" data-group="crops"> Sweet potatoes</label>
+              <label><input type="checkbox" name="crops" value="Herbs" data-group="crops"> Herbs</label>
+              <label><input type="checkbox" name="crops" value="Other" data-group="crops"> Other</label>
+            </div>
+            <p class="field__error" data-error-for="crops"></p>
+          </fieldset>
+          <div class="field field--wide">
+            <label class="check" for="consent">
+              <input type="checkbox" id="consent" name="consent">
+              <span>I agree that KilimoFresh may store these contact details to handle this request, as set out in Kenya’s Data Protection Act, 2019. They are not shared or used for marketing.</span>
+            </label>
+            <p class="field__error" data-error-for="consent"></p>
+          </div>
+          </div>
+          <div data-form-alert></div>
+          <div class="form-actions"><button class="btn btn--primary" type="submit">Send application</button></div>
+        </form>
+
+        <aside class="grid">
+          <div class="card card--pad">
+            <h2>What you get</h2>
+            <ul>
+              <li>Your harvest listed in the catalog with a grade and a published price.</li>
+              <li>Bulk orders from schools, hospitals, hotels and caterers.</li>
+              <li>Grading at the collection point and returnable crates.</li>
+              <li>Weekly advisories by WhatsApp.</li>
+            </ul>
+          </div>
+          <div class="card card--pad">
+            <h2>What happens next</h2>
+            <p>A field officer calls you within three working days, visits the farm, and agrees a harvest calendar with you.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <section class="section section--tint" aria-labelledby="advice-title">
+      <div class="container">
+        <div class="section__head">
+          <p class="eyebrow">Farming advisories</p>
+          <h2 id="advice-title">Getting more of your harvest to market</h2>
+        </div>
+        <div class="grid grid--3">
+          <article class="card card--pad"><h3>Harvest in the cool hours</h3><p>Pick early in the morning and keep crates in the shade. Produce that starts cool stays fresh for longer on the road.</p></article>
+          <article class="card card--pad"><h3>Sort at the farm</h3><p>Separate Grade 1 from Grade 2 before the collection point. One damaged fruit in a crate lowers the grade of the whole crate.</p></article>
+          <article class="card card--pad"><h3>Use ventilated crates</h3><p>Plastic crates stacked no more than five high bruise less than sacks, and can be washed and reused.</p></article>
+          <article class="card card--pad"><h3>Report the harvest date early</h3><p>Tell the desk a week before you harvest. Listings that go up early are usually requested before picking.</p></article>
+          <article class="card card--pad"><h3>Stagger your planting</h3><p>Planting a section every two weeks spreads the harvest, so you supply a buyer every week instead of once.</p></article>
+          <article class="card card--pad"><h3>Keep simple records</h3><p>Write down planting dates, inputs and yields per plot. Buyers increasingly ask where and how produce was grown.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+  <noscript><p class="container">KilimoFresh needs JavaScript to show the catalog and send orders. Call or WhatsApp +254 700 000 000 to order.</p></noscript>
+</body>
+</html>

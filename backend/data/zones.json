@@ -1,0 +1,38 @@
+[
+  {
+    "id": "machakos-town",
+    "name": "Machakos Town",
+    "fee": 500,
+    "days": 1
+  },
+  {
+    "id": "athi-river",
+    "name": "Athi River & Mlolongo",
+    "fee": 900,
+    "days": 1
+  },
+  {
+    "id": "kangundo-tala",
+    "name": "Kangundo & Tala",
+    "fee": 800,
+    "days": 1
+  },
+  {
+    "id": "matuu-mwala",
+    "name": "Matuu & Mwala",
+    "fee": 1200,
+    "days": 2
+  },
+  {
+    "id": "kitengela",
+    "name": "Kitengela",
+    "fee": 1500,
+    "days": 2
+  },
+  {
+    "id": "nairobi",
+    "name": "Nairobi (CBD & Industrial Area)",
+    "fee": 2500,
+    "days": 2
+  }
+]

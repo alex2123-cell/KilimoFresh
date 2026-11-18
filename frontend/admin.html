@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin · KilimoFresh</title>
+  <meta name="description" content="Cooperative admin: orders inbox and catalog management.">
+  <meta name="theme-color" content="#1d5a38">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="module" src="js/pages/admin.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header" id="site-header"></header>
+
+  <main id="main" tabindex="-1">
+    <div class="container section">
+      <section class="card login" id="login-view" hidden aria-labelledby="login-title">
+        <p class="eyebrow">Cooperative admin</p>
+        <h1 id="login-title">Sign in</h1>
+        <form id="login-form" class="grid" novalidate>
+          <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" autocomplete="username" required></div>
+          <div class="field"><label for="password">Password</label><input type="password" id="password" name="password" autocomplete="current-password" required></div>
+          <div id="login-alert"></div>
+          <button class="btn btn--primary" type="submit">Sign in</button>
+        </form>
+      </section>
+
+      <section id="dashboard" hidden aria-labelledby="dash-title">
+        <div class="admin__bar">
+          <div>
+            <p class="eyebrow">Cooperative admin</p>
+            <h1 id="dash-title">Orders and catalog</h1>
+            <p class="muted">Signed in as <span id="who"></span></p>
+          </div>
+          <button class="btn btn--ghost" type="button" id="logout">Sign out</button>
+        </div>
+        <div class="stats stats--6" id="summary"></div>
+        <div class="tabs" id="tabs" role="tablist" aria-label="Admin sections">
+          <button type="button" role="tab" data-tab="orders" aria-selected="true" aria-controls="panel">Requisitions</button>
+          <button type="button" role="tab" data-tab="growers" aria-selected="false" aria-controls="panel">Grower applications</button>
+          <button type="button" role="tab" data-tab="messages" aria-selected="false" aria-controls="panel">Messages</button>
+          <button type="button" role="tab" data-tab="catalog" aria-selected="false" aria-controls="panel">Catalog</button>
+        </div>
+        <div id="panel" role="tabpanel" aria-live="polite"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+  <noscript><p class="container">KilimoFresh needs JavaScript to show the catalog and send orders. Call or WhatsApp +254 700 000 000 to order.</p></noscript>
+</body>
+</html>

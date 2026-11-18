@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Harvest Catalog · KilimoFresh</title>
+  <meta name="description" content="Search and filter this week's graded produce from Machakos cooperatives by category, location, price and stock, and estimate the cost of a bulk order.">
+  <meta name="theme-color" content="#1d5a38">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="module" src="js/pages/catalog.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header" id="site-header"></header>
+
+  <main id="main" tabindex="-1">
+    <div class="container page-head">
+      <p class="eyebrow">Harvest catalog</p>
+      <h1>What Machakos is harvesting</h1>
+      <p class="lead">Prices are per selling unit. Use Estimate to add delivery, then Request to send a requisition.</p>
+    </div>
+
+    <div class="container catalog">
+      <form class="card filters" id="filters" aria-label="Filter the catalog">
+        <h2>Find produce</h2>
+        <div class="field">
+          <label for="q">Search</label>
+          <input type="search" id="q" name="q" placeholder="Crop, variety or code" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="category">Category</label>
+          <select id="category" name="category"><option value="">All categories</option></select>
+        </div>
+        <div class="field">
+          <label for="location">Farm location</label>
+          <select id="location" name="location"><option value="">All locations</option></select>
+        </div>
+        <div class="field">
+          <div class="filters__price">
+            <label for="maxPrice">Max. price per unit</label>
+            <output id="price-output" for="maxPrice"></output>
+          </div>
+          <input type="range" id="maxPrice" name="maxPrice" min="500" max="15000" step="100" value="15000">
+        </div>
+        <div class="field">
+          <label class="check" for="inStock"><input type="checkbox" id="inStock" name="inStock"><span>Hide sold-out listings</span></label>
+        </div>
+        <button class="btn btn--ghost" type="button" id="clear-filters">Clear filters</button>
+      </form>
+
+      <section aria-labelledby="results-title">
+        <div class="catalog__bar">
+          <h2 id="results-title" class="sr-only">Listings</h2>
+          <p id="result-count" role="status" aria-live="polite"></p>
+        </div>
+        <ul class="catalog__grid" id="catalog-grid"></ul>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+  <noscript><p class="container">KilimoFresh needs JavaScript to show the catalog and send orders. Call or WhatsApp +254 700 000 000 to order.</p></noscript>
+</body>
+</html>

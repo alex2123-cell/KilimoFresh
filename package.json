@@ -1,0 +1,23 @@
+{
+  "name": "kilimo-fresh",
+  "version": "1.0.0",
+  "description": "KilimoFresh - Machakos produce sourcing hub connecting peri-urban farmers with institutional buyers (ACS 355)",
+  "private": true,
+  "main": "backend/server.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node backend/server.js",
+    "codespace": "HTTPS=off node backend/server.js",
+    "dev": "node --watch backend/server.js",
+    "pki": "node backend/scripts/generate-pki.js",
+    "admin": "node backend/scripts/create-admin.js",
+    "test": "node --test backend/tests/api.test.js"
+  },
+  "dependencies": {
+    "express": "^5.3.0",
+    "helmet": "^8.3.0",
+    "node-forge": "^1.4.3"
+  }
+}
