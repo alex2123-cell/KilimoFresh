@@ -5,8 +5,8 @@ export const config = {
 
   // WhatsApp number of the cooperative desk, in international format
   // without "+" (used for prefilled order messages).
-  whatsappNumber: '254700000000',
-  phoneDisplay: '+254 700 000 000',
+  whatsappNumber: '254792802553',
+  phoneDisplay: '+254 792 802 553',
   email: 'orders@kilimofresh.co.ke',
   address: 'Cooperative House, Mwatu wa Ngoma Street, Machakos Town',
 

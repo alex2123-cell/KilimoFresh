@@ -91,7 +91,7 @@ function footer() {
     el(
       'div',
       { class: 'footer__base' },
-      el('p', {}, `© ${new Date().getFullYear()} ${config.name} Cooperative Network · ACS 355 project, Daystar University`),
+      el('p', {}, `© ${new Date().getFullYear()} ${config.name} Cooperative Network`),
       el('p', {}, el('a', { href: 'trust.html' }, 'Trust & Security'), ' · ', el('a', { href: 'admin.html' }, 'Admin')),
     ),
   );
